@@ -1,0 +1,42 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/container.astro";
+import Sectionhead from "@components/sectionhead.astro";
+import { Icon } from "astro-icon/components";
+
+---
+
+<Layout title="About">
+  <Container>
+    <Sectionhead>
+      <Fragment slot="title">About Me</Fragment>
+      <Fragment slot="desc">Turning data into actionable insights, one solution at a time.</Fragment>
+    </Sectionhead>
+
+    <div class="flex flex-col gap-3 mx-auto max-w-4xl mt-16">
+      <p class="text-lg leading-relaxed text-slate-500">
+        I am a passionate data scientist and AI innovator with a solid foundation in engineering and leadership. My journey has taken me from designing scalable data pipelines to crafting cutting-edge AI solutions tailored to unique business needs.
+      </p>
+      <p class="text-lg leading-relaxed text-slate-500">
+        Currently pursuing my Master of Science in Computer Science at the University of New Brunswick (UNB), my thesis focuses on developing a generalized causal inference pipeline for predictive analytics. By combining machine learning and causal inference techniques, I aim to make real-time counterfactual analysis accessible and impactful.
+      </p>
+      <p class="text-lg leading-relaxed text-slate-500">
+        Over the years, I've honed my skills in data engineering, big data systems, and scalable architectures. My work spans from leading projects at industry giants like Kmart Australia to creating innovative platforms like Ecologia.ai. With a focus on AI-driven innovation, I help organizations unlock the true potential of their data.
+      </p>
+      <p class="text-lg leading-relaxed text-slate-500">
+        Let's connect and explore how we can solve complex challenges and drive transformative outcomes together.
+      </p>
+    </div>
+    <div class="flex justify-center items-center mt-16">
+      <!-- LinkedIn Icon with Link -->
+      <a 
+        href="https://www.linkedin.com/in/ronnitpeter" 
+        target="_blank" 
+        rel="noopener noreferrer" 
+        class="flex items-center justify-center"
+      >
+        <Icon name="simple-icons:linkedin" class="w-6 h-6 text-blue-600 hover:text-blue-800" />
+      </a>
+    </div>
+  </Container>
+</Layout>

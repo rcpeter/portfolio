@@ -1,0 +1,71 @@
+---
+import { Picture } from "astro:assets";
+import heroImage from "assets/hero.png";
+import Link from "@components/ui/link.astro";
+---
+
+<main class="flex flex-col md:flex-row items-center justify-center pt-16 pb-8 md:pt-12 md:pb-24">
+  <!-- Text Section -->
+  <div class="flex flex-col items-center md:items-start text-center md:text-left max-w-lg md:pr-16">
+    <div id="typewriter-container">
+      <h1
+        id="typewriter-title"
+        class="text-3xl lg:text-4xl xl:text-5xl font-bold lg:tracking-tight xl:tracking-tighter mb-8 whitespace-nowrap">
+        <!-- Added `whitespace-nowrap` to prevent text wrapping -->
+      </h1>
+    </div>
+    <p class="text-base text-slate-600 max-w-md mb-8">
+      👋 I'm Ronnit Peter. My domain expansion is crafting AI and turning your data into decisive actions. Helping you exorcise challenges and uncover unseen opportunities.
+    </p>
+    <div class="mt-8 flex flex-col sm:flex-row gap-4">
+      <Link
+        href="/contact"
+        class="px-6 py-3 bg-green-600 text-white font-medium rounded-md text-center inline-block hover:bg-olive-700">
+        Contact Me
+      </Link>
+    <Link
+      href="/resume"
+      class="px-6 py-3 border border-gray-800 text-gray-800 font-medium rounded-md text-center inline-block hover:bg-gray-300 hover:text-gray-800">
+      My Street Cred
+    </Link>
+    </div>
+  </div>
+
+  <!-- Hero Image -->
+  <div class="w-[40%] md:w-[30%] lg:w-[25%] max-w-[250px] flex justify-center md:ml-20">
+    <!-- Adjusted width percentages and max-width for more control -->
+    <Picture
+      src={heroImage}
+      alt="Astronaut in the air"
+      widths={[100, 200, 300]}
+      sizes="(max-width: 800px) 40vw, 250px"
+      loading="eager"
+      format="avif"
+      class="w-full h-auto"
+    />
+  </div>
+</main>
+
+<script>
+  import Typewriter from "typewriter-effect/dist/core";
+
+  const app = document.getElementById("typewriter-title");
+
+  const typewriter = new Typewriter(app, {
+    loop: true,
+    delay: 75,
+    deleteSpeed: 50,
+  });
+
+  typewriter
+    .typeString("Data Scientist")
+    .pauseFor(1500)
+    .deleteAll()
+    .typeString("AI Innovator")
+    .pauseFor(1500)
+    .deleteAll()
+    .typeString('<span style="white-space: nowrap;">Engineering Advisor</span>')
+    .pauseFor(1500)
+    .deleteAll()
+    .start();
+</script>

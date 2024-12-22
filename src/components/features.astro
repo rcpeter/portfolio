@@ -1,0 +1,105 @@
+---
+// @ts-ignore
+import { Icon } from "astro-icon/components";
+
+const features = [
+  {
+    title: "Strategic Data Solutions",
+    description:
+      "I design tailored data pipelines and analytical systems to help you uncover actionable insights and optimize decision-making.",
+    icon: "bx:bxs-briefcase",
+  },
+  {
+    title: "AI & Machine Learning",
+    description:
+      "From predictive models to causal inference, I bring deep expertise in creating robust AI solutions that align with your business needs.",
+    icon: "bx:bxs-window-alt",
+  },
+  {
+    title: "Engineering Leadership",
+    description:
+      "I mentor, coach, and guide engineering teams to foster a culture of innovation and agility, ensuring technical excellence and business alignment.",
+    icon: "bx:bxs-data",
+  },
+  {
+    title: "Technology Integration",
+    description:
+      "Leveraging my experience across tools like Snowflake, Airflow, dbt to building DaskDB, FunDa, Ecologia.ai to name a few, I help teams integrate the right technologies for their challenges.",
+    icon: "bx:bxs-bot",
+  },
+  {
+    title: "Scalable Architecture",
+    description:
+      "From startups to enterprises, I specialize in building scalable, future-ready systems that grow with your business.",
+    icon: "bx:bxs-file-find",
+  },
+  {
+    title: "Transforming Ideas Into Reality",
+    description:
+      "With a focus on innovation, precision, and collaboration, I work alongside your teams to achieve exceptional outcomes. Let's build something remarkable together.",
+    icon: "bx:bxs-user",
+  },
+];
+---
+
+<div class="flex justify-center mt-1 md:mt-0">
+  <div class="text-center">
+    <h2 id="title" class="text-4xl lg:text-5xl font-bold lg:tracking-tight inline-block">
+      Tailored to your needs, by yours truly.
+    </h2>
+    <p
+      id="paragraph"
+      class="text-lg mt-4 text-slate-600 mx-auto"
+      style="width: auto;">
+      I thrive on tackling complex challenges, blending cutting-edge technologies with pragmatic strategies. Whether it’s AI innovation, system optimization, or data-driven decision-making, 
+      <span class="line-through text-red-500 opacity-70">you</span> 
+      <span class="italic text-green-600 font-medium">we</span> work together to deliver world-class results.
+    </p>
+  </div>
+</div>
+
+<script>
+  // Match the width of the paragraph to the title
+  const title = document.getElementById("title");
+  const paragraph = document.getElementById("paragraph");
+
+  function matchWidth() {
+    const titleWidth = title.offsetWidth;
+    paragraph.style.width = `${titleWidth}px`;
+  }
+
+  // Run the function on page load and resize
+  window.addEventListener("load", matchWidth);
+  window.addEventListener("resize", matchWidth);
+</script>
+
+
+<style>
+  /* Match paragraph width to the title width */
+  #paragraph {
+    max-width: fit-content; /* Ensures it doesn't expand beyond the title */
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #title {
+    display: inline-block; /* Ensures the title's width is calculated accurately */
+  }
+</style>
+
+
+<div class="grid sm:grid-cols-2 md:grid-cols-3 mt-16 gap-16">
+  {
+    features.map((item) => (
+      <div class="flex gap-4 items-start">
+        <div class="mt-1 bg-black rounded-full  p-2 w-8 h-8 shrink-0">
+          <Icon class="text-white" name={item.icon} />
+        </div>
+        <div>
+          <h3 class="font-semibold text-lg">{item.title}</h3>{" "}
+          <p class="text-slate-500 mt-2 leading-relaxed">{item.description}</p>
+        </div>
+      </div>
+    ))
+  }
+</div>
